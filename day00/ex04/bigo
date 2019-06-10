@@ -1,0 +1,3 @@
+O(n) time - searches through entire text once
+	   in other cases it would be O(n+m) where m is the combined length of all patterns, but we only handle one pattern
+O(1) space - normal Rabin-Karp is O(p) where p = number of patterns, but we only handle one pattern

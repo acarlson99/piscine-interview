@@ -6,7 +6,7 @@
 
 size_t hash(char *input) {
 	size_t hash = FVN_OFFSET_BASIS;
-	for (int i = 0; input[i]; ++i) {
+	for (size_t i = 0; input[i]; ++i) {
 		hash = hash * FVN_PRIME;
 		hash = hash ^ input[i];
 	}
