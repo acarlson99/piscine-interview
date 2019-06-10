@@ -1,0 +1,2 @@
+O(log n) time - keeps halving the search area until the right element is found
+O(1) space - does not use extra space

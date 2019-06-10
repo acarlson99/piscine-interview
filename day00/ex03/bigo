@@ -1,0 +1,2 @@
+O(1) time - lookup should be instant
+O(n) space - allocates space for each element
