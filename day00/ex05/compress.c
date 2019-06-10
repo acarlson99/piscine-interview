@@ -42,7 +42,7 @@ struct s_dict *dictInit(int capacity) {
 }
 
 int dictInsert(struct s_dict *dict, char *key, int value) {
-	if (!dict || !value || !key)
+	if (!dict || !key)
 		return (0);
 	size_t idx = hash(key) % dict->capacity;
 	struct s_item *item;
@@ -94,10 +94,8 @@ char *makeHeader(struct s_dict *dict) {
 	}
 	char *ret = malloc(total * sizeof(char));
 	int num;
-	int done = 0;
 	char *ptr = ret + sprintf(ret, "<");
-	for (num = 0; !done; ++num) {
-		done = 1;
+	for (num = 0; ; ++num) {
 		struct s_item *item = getItem(dict, num);
 		if (!item)
 			break ;
@@ -111,7 +109,6 @@ char *compress(char *book, struct s_dict *dict) {
 	size_t n = strlen(book);
 	char *header = makeHeader(dict);
 	size_t headlen = strlen(header);
-	printf("%s\n", header);
 	char *ret = realloc(header, ((strlen(header) + n + 1) * sizeof(char)));
 	// char *ret = malloc((n + 1) * sizeof(char));
 	char *ptr = ret + headlen;

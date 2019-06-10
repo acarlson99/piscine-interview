@@ -22,12 +22,8 @@ int main(void)
 	
 	dict = dictInit(lenWords);
 	
-	for (int i = 0; i < lenWords; i++) {
-		printf("Insert [%s] at [%d] ", words[i], i);
-		printf("%d\n", dictInsert(dict, words[i], i));	// Insertion fails????
-	}
-
-	printf("%d\n", dictSearch(dict, "that"));
+	for (int i = 0; i < lenWords; i++)
+		dictInsert(dict, words[i], i);
 	
 	char *s = compress(book, dict);
 
