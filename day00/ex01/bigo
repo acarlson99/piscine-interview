@@ -1,0 +1,2 @@
+O(n^2) time - worst case when called on already sorted array
+O(1) space - uses no extra space

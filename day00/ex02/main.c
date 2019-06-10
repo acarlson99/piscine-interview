@@ -8,20 +8,16 @@
 int main(void)
 {
 	struct s_art **arts;
+	int n;
 
-	arts = getArts(); //parsing the file and put it in an array
-
+	arts = getArts(&n); //parsing the file and put it in an array
 	/*-------------------
 	launch your test here
 	--------------------*/
-
-	//sort the array
-	sortArts(arts);
-
-	//print sorted array
-	for (int i = 0; arts[i]; i++) {
-		printf("%s => %d\n", arts[i]->name, arts[i]->price);
-	}
+	printf("price for the art \'%s\' is %d\n", "Guernica", searchPrice(arts, n, "Guernica"));
+	printf("price for the art \'%s\' is %d\n", "Mona Lisa", searchPrice(arts, n, "Mona Lisa"));
+	printf("price for the art \'%s\' is %d\n", "Starry Night", searchPrice(arts, n, "Starry Night"));
+	printf("price for the art \'%s\' is %d\n", "Nonono", searchPrice(arts, n, "Nonono"));
 
 	return (0);
 }
@@ -131,7 +127,7 @@ struct s_art *getArts_createStruct( char *line ){
 	return (piece);
 }
 
-struct s_art **getArts(void)
+struct s_art **getArts(int *n)
 {
 	char *file;
 	struct s_art **art;
@@ -144,9 +140,12 @@ struct s_art **getArts(void)
 
 	//creating the array
 	art_size = 0;
+	(*n) = 0;
 	for (int i = 0; file[i]; i++){
-		if (file[i] == '\n')
+		if (file[i] == '\n'){
 			art_size += 1;
+			(*n) += 1;
+		}
 	}
 	if (NULL == (art = malloc(sizeof(struct s_art *) * (art_size + 1))))
 		getArts_leave();
@@ -161,7 +160,6 @@ struct s_art **getArts(void)
 			art[(art_index++)] = tmp; 
 	}
 	art[(art_index)] = NULL;
-
 	for (int i = 0; tab[i] ; i++){
 		free(tab[i]);
 	} free(tab);
