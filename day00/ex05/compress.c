@@ -110,7 +110,6 @@ char *compress(char *book, struct s_dict *dict) {
 	char *header = makeHeader(dict);
 	size_t headlen = strlen(header);
 	char *ret = realloc(header, ((strlen(header) + n + 1) * sizeof(char)));
-	// char *ret = malloc((n + 1) * sizeof(char));
 	char *ptr = ret + headlen;
 	for (size_t i = 0; i < n;) {
 		while (isspace(book[i]))
