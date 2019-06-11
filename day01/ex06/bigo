@@ -1,0 +1,3 @@
+O(n) time - goes down the list once, then returns up the stack
+O(1) space - not counting the stack it uses no extra memory
+	 	   	 counting the stack it uses O(n) memory.  One stack frame per element

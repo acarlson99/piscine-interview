@@ -41,6 +41,7 @@ char *console(void) {
 	struct s_stack *s = stackInit();
 	char buf[255] = { 0 };
 	char *msg = malloc((255 + 1) * sizeof(char));
+	bzero(msg, 256);
 	char nl = '\n';
 
 	printf("> ");
