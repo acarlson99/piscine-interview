@@ -16,6 +16,17 @@ int main(void)
 	launch your test here
 	--------------------*/
 
+	struct s_string *s = stringInit();
+
+	stringAppend(s, "abcdefYEEEEEEEEEEEE");
+	stringAppend(s, "abcdefYEEEEEEEEEEEE");
+	printf("%s\n", s->content);
+
+	char *st = decompress(cBook);
+	FILE *fp = fopen("out.txt", "w");
+	fprintf(fp, "%s", st);
+	fclose(fp);
+
 	return (0);
 }
 

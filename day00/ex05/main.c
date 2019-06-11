@@ -29,6 +29,7 @@ int main(void)
 
 	FILE *fp = fopen("out.txt", "w");
 	fprintf(fp, "%s", s);
+	fclose(fp);
 
 	return (0);
 }
