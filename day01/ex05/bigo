@@ -1,0 +1,2 @@
+O(1) time - both pushing and popping are O(1) time.  They prepend to a stack and remove an element from a stack respectively
+O(n) space - the tank uses as many s_stacks as there are bars
