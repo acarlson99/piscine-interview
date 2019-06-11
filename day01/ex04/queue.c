@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "header.h"
 
-struct s_queue *queueinit(void) {
+struct s_queue *queueInit(void) {
 	struct s_queue *new;
 
 	if (!(new = (struct s_queue *)malloc(sizeof(struct s_queue))))
