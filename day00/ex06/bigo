@@ -1,0 +1,2 @@
+O(n) time - goes through file exactly once
+O(h+a) space where h = elements in header and a = number of '@' signs - clones header and splits based on number of '@' signs found
