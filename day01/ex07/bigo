@@ -1,0 +1,2 @@
+O(n) time - goes through each node exactly once, accessing random nodes via a hash table
+O(n) space - 1 element per node for clone, 1 element per node for hashtbl
