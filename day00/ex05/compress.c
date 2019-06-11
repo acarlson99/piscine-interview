@@ -123,7 +123,7 @@ char *compress(char *book, struct s_dict *dict) {
 		}
 		else {
 			*ptr++ = '@';
-			*ptr++ = idx;
+			*ptr++ = idx + 1;
 			while (book[i] && !isspace(book[i]))
 				++i;
 		}
