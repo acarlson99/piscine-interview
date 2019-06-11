@@ -1,0 +1,2 @@
+O(n) time - time taken appending messages to string
+O(n) space - space required for string and stack
