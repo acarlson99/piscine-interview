@@ -1,0 +1,2 @@
+O(n) time - goes through whole string once
+O(n) space - copies most of the string
