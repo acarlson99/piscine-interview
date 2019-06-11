@@ -30,7 +30,7 @@ struct s_dict *dictInit(int capacity) {
 }
 
 int dictInsert(struct s_dict *dict, size_t key, struct s_node *node) {
-	if (!dict || !node || !key)
+	if (!dict || !node)
 		return (0);
 	size_t idx = key % dict->capacity;
 	struct s_item *item;
@@ -57,6 +57,8 @@ struct s_node *dictSearch(struct s_dict *dict, int key) {
 struct s_node *newNode(int value) {
 	struct s_node *node = malloc(sizeof(*node));
 	node->value = value;
+	node->random = NULL;
+	node->next = NULL;
 	return (node);
 }
 
