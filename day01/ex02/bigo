@@ -1,0 +1,2 @@
+O(n) time - goes through the list twice (once to push, once to print)
+O(n) space - stacks each element

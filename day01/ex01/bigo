@@ -1,0 +1,2 @@
+O(n) time - traverses list once
+O(1) space - does not use extra space
