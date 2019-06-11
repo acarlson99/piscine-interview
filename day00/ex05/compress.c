@@ -114,7 +114,7 @@ char *compress(char *book, struct s_dict *dict) {
 	char *ptr = ret + headlen;
 	for (size_t i = 0; i < n;) {
 		while (isspace(book[i]))
-			++i;
+			*ptr++ = i++;
 		int idx = searchWord(dict, book + i);
 		if (idx < 0) {
 			while (book[i] && !isspace(book[i])) {
