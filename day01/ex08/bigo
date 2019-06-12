@@ -1,0 +1,2 @@
+O(nl) time - l = number of looping nodes.  Simple breadth first search, nodes that loop back on themselves are still searched
+O(nl) space - l = number of looping nodes.  I allocate for each next and each random
