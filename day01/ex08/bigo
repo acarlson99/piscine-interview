@@ -1,2 +1,0 @@
-O(V+E) time - V = number of vertices, E = number of edges https://stackoverflow.com/questions/26549140/breadth-first-search-time-complexity-analysis
-O(n) space - allocate for each node connection
