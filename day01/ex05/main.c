@@ -18,21 +18,27 @@ int main(void)
 	printf("%d\n", tank->stacks[tank->n]->sum);
 	printf("%d\n", tankPop(tank));
 	printf("%d\n", tank->stacks[tank->n]->sum);
-	tankPush(tank, 1000);
+	// tankPush(tank, 1000);
 	printf("%d\n", tank->stacks[tank->n]->sum);
 	printf("%d\n", tankPop(tank));
 	printf("%d\n", tankPop(tank));
 	printf("%d\n", tankPop(tank));
 
-	tankPush(tank, 990);
+	for (int i = 0; i < 9; ++i)
+		tankPush(tank, 100);
+	tankPush(tank, 99);
+	// tankPush(tank, 110);
 	printf("%d\n", tank->stacks[tank->n]->sum);
 	tankPush(tank, 100);
 	printf("%d\n", tank->stacks[tank->n]->sum);
 	tankPush(tank, 10);
 	printf("%d\n", tank->stacks[tank->n]->sum);
 	printf("%d\n", tankPop(tank));
+	printf("%d\n", tank->stacks[tank->n]->sum);
 	printf("%d\n", tankPop(tank));
+	printf("%d\n", tank->stacks[tank->n]->sum);
 	printf("%d\n", tankPop(tank));
+	printf("%d\n", tank->stacks[tank->n]->sum);
 	return (0);
 }
 

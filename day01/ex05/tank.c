@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdlib.h>
 #include "header.h"
 
@@ -41,8 +42,8 @@ struct s_tank *initTank(void) {
 }
 
 void tankPush(struct s_tank *tank, int energy) {
-	if (energy < 0 || energy > CAPACITY || !tank || tank->n >= NUMSTACKS)
-		return ;
+	if (energy < 10 || energy > 100 || !tank || tank->n >= NUMSTACKS)
+		assert(0); // return ;
 	if (tank->stacks[tank->n]->sum + energy > CAPACITY) {
 		tank->n++;
 		if (tank->n >= NUMSTACKS)
