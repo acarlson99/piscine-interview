@@ -69,6 +69,8 @@ struct s_stone *sortList(struct s_stone *head, unsigned len) {
 }
 
 void sortStones(struct s_stone **stone) {
+	if (!stone)
+		return ;
 	unsigned len = 0;
 	for (struct s_stone *node = *stone; node; node = node->next)
 		++len;
