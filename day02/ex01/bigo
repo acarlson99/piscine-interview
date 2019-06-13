@@ -1,0 +1,2 @@
+O(n^2) time - still comparing all adjacent elements
+O(1) space - no extra space
