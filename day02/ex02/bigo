@@ -1,0 +1,2 @@
+O(n^2) - worst case when it selects greatest or smallest element each time
+O(n) space - worst case recurses for each element

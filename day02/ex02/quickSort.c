@@ -12,6 +12,11 @@ int partition(struct s_player **players, int l, int h) {
 			players[j] = tmp;
 		}
 	}
+	struct s_player *tmp = players[i+1];
+	players[i+1] = players[h];
+	players[h] = tmp;
+	return (i + 1);
+}
 
 void qsort(struct s_player **players, int l, int h) {
 	if (l < h) {

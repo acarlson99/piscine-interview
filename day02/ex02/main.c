@@ -15,10 +15,10 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//printPlayers(players);
-	//printf("doing the quick sort...\n");
-	//quickSort(players);
-	//printPlayers(players);
+	printPlayers(players);
+	printf("doing the quick sort...\n");
+	quickSort(players);
+	printPlayers(players);
 
 	return (0);
 }
