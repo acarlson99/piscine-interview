@@ -16,9 +16,9 @@ int main(void)
 	launch your test here
 	--------------------*/
 	printPlayers(players);
-	//printf("doing the merge sort...\n");
-	//players = mergeSort(players);
-	//printPlayers(players);
+	printf("doing the merge sort...\n");
+	players = mergeSort(players);
+	printPlayers(players);
 
 	return (0);
 }
