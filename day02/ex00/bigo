@@ -1,0 +1,2 @@
+O(n log n) time - halves input log(n) times and iterates through halved input n times
+O(n) space - recurses for each node
