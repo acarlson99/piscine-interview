@@ -1,0 +1,2 @@
+O(n log n) time - halves input log n times.  Iterates over halved input n times
+O(n) space - recursively allocates space for each element
