@@ -1,0 +1,2 @@
+O(n) time - traverses array once
+O(log n) space - recurses with halved array
