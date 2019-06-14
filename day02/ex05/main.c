@@ -15,6 +15,7 @@ int main(void)
 	srand(time(NULL));
 	n = rand() % 90 + 10;
 	rocks = createRandomArray(n);
+
 	if (rand() % 2)
 		value = rand() % 30;
 	else
@@ -25,10 +26,16 @@ int main(void)
 	--------------------*/
 
 	printArray(rocks, n);
-	int ret = searchShifted(rocks, n, value);
-	printf("Value %d at index %d\n", value, ret);
-	if (ret > 0)
-		printf("%d\n", rocks[ret]);
+	for (int i = 0; i < 7; ++i) {
+		if (rand() % 2)
+			value = rand() % 30;
+		else
+			value = rocks[rand() % n];
+		int ret = searchShifted(rocks, n, value);
+		printf("Value %d at index %d\n", value, ret);
+		if (ret >= 0)
+			printf("rocks[%d] = %d\n", ret, rocks[ret]);
+	}
 }
 
 

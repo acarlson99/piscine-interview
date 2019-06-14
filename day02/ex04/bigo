@@ -1,0 +1,2 @@
+O(n) time - iterates over whole list linearly
+O(n) space - clones string once

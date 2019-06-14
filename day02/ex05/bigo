@@ -1,0 +1,2 @@
+O(n) time - worst case it is not rotated and the function goes through the array linearly
+O(log n) space - recurses for each halving of the array

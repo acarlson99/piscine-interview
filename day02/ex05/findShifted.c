@@ -1,26 +1,24 @@
 #include "header.h"
 
-int binarySearch(int *rocks, int length, int value, int left, int right) {
-	int i = length / 2;
-	if (length == 0 || !rocks[i])
+int binarySearch(int *rocks, int value, int left, int right) {
+	if (right < left)
 		return (-1);
-	int cmp = rocks[i] - value;
-	if (!cmp)
-		return (rocks[i]);
-	else if (cmp > 0)
-		return (binarySearch(rocks, i, value, i, right));
-	else {
-		if (i == 0)
-			return (-1);
-		return (binarySearch(rocks + i, length - i, value, i, right));
-	}
+	int pi = (left + right) / 2;
+	if (rocks[pi] > value)
+		return (binarySearch(rocks, value, left, pi-1));
+	else if (rocks[pi] < value)
+		return (binarySearch(rocks, value, pi+1, right));
+	else if (rocks[pi] == value)
+		return (pi);
+	else
+		return (-1);
 }
 
 int searchShifted(int *rocks, int length, int value) {
 	int pi = 0;
-	for (; pi < length && rocks[pi] >= 1[rocks+pi]; ++pi) {
+	for (; pi < length && rocks[pi] <= 1[rocks+pi]; ++pi) {
 		if (rocks[pi] == value)
 			return (pi);
 	}
-	return (binarySearch(rocks, length - pi, value, pi, length));
+	return (binarySearch(rocks, value, pi, length));
 }
