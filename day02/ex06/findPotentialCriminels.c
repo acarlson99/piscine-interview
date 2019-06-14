@@ -26,7 +26,6 @@ void countSort(struct s_criminal **criminals, int exp) {
 
 	struct s_criminal **output = calloc(sizeof(*criminals), len);
 
-	// for (i = 0; criminals[i]; ++i) {
 	for (i = len - 1; i >= 0; --i) {
 		output[count[(criminals[i]->description / exp) % 10] - 1] = criminals[i];
 		--count[(criminals[i]->description / exp) % 10];
