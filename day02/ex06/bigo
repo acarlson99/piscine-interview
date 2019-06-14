@@ -1,0 +1,2 @@
+O(wn) time - where w = number of digits of each key.  Iterates over all arguments w times
+O(w+n) space - clones list and uses array large enough to store all digits
