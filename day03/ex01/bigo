@@ -1,0 +1,2 @@
+O(n) time - traverses list once
+O(n) space - allocates and recurses once per node

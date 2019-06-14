@@ -25,8 +25,8 @@ struct s_ret traverseTree(struct s_node *root, struct s_info *info, int min, int
 	++info->elements;
 	info->max = max_(info->max, root->value);
 	info->min = min_(info->min, root->value);
-	struct s_ret l = traverseTree(root->left, info, min, root->value - 1);
-	struct s_ret r = traverseTree(root->right, info, root->value + 1, max);
+	struct s_ret l = traverseTree(root->left, info, min, root->value);
+	struct s_ret r = traverseTree(root->right, info, root->value, max);
 	return ((struct s_ret){max_(l.maxheight, r.maxheight) + 1,
 				min_(l.minheight, r.minheight) + 1,
 				bst && l.bst && r.bst});
@@ -39,7 +39,7 @@ struct s_info getInfo(struct s_node *root) {
 	info.min = INT_MAX;
 	info.elements = 0;
 	struct s_ret ret = traverseTree(root, &info, INT_MIN, INT_MAX);
-	info.height = ret.minheight;
+	info.height = ret.maxheight;
 	info.isBST = ret.bst;
 	info.isBalanced = abs(ret.maxheight - ret.minheight) <= 1;
 	return (info);
