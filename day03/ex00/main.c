@@ -18,8 +18,8 @@ int main(void)
         /*-------------------
         launch your test here
         --------------------*/
-	// info = getInfo(root);
-	// printTreeInfo(info);
+	info = getInfo(root);
+	printTreeInfo(info);
 
 	return (0);
 }
