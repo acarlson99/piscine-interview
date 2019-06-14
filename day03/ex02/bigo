@@ -1,0 +1,2 @@
+O(n) time - worst case travels through entire tree
+O(log n) space - recurses through height of tree
