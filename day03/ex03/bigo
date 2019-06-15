@@ -1,2 +1,2 @@
-O(n) time - worst case travels through entire tree
+O(n^2) time - recurses every swap
 O(h) space - h = height of tree.  Recurses through height of tree

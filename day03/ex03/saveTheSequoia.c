@@ -1,29 +1,37 @@
 #include "header.h"
 
 void swap(struct s_node **a, struct s_node **b) {
-	struct s_node *tmp;
-	tmp = (*a)->left;
-	(*a)->left = (*b)->left;
-	(*b)->left = tmp;
+	struct s_node *tmp = *a;
+	struct s_node *left = (*b)->left;
+	struct s_node *right = (*b)->right;
 
-	tmp = (*a)->right;
-	(*a)->right = (*b)->right;
-	(*b)->right = tmp;
-
-	tmp = *a;
 	*a = *b;
-	*b = tmp;
+	if (tmp->left == (*b)) {
+		(*b)->left = tmp;
+		(*b)->right = tmp->right;
+	}
+	else {
+		(*b)->left = tmp->left;
+		(*b)->right = tmp;
+	}
+	tmp->left = left;
+	tmp->right = right;
 }
 
-#include <stdio.h>
 void saveTheSequoia(struct s_node **root) {
-	printf("%d\n", (*root)->value);
-	printf("%d\n", (*root)->left->value);
-	printf("%d\n\n", (*root)->right->value);
-
-	swap(root, &(*root)->left);
-
-	printf("%d\n", (*root)->value);
-	printf("%d\n", (*root)->left->value);
-	printf("%d\n", (*root)->right->value);
+	if (!*root)
+		return ;
+	int swp = 0;
+	if ((*root)->left && (*root)->left->value > (*root)->value) {
+		swap(&(*root), &(*root)->left);
+		swp = 1;
+	}
+	if ((*root)->right && (*root)->right->value > (*root)->value) {
+		swap(&(*root), &(*root)->right);
+		swp = 1;
+	}
+	saveTheSequoia(&(*root)->left);
+	saveTheSequoia(&(*root)->right);
+	if (swp)
+		saveTheSequoia(root);
 }
