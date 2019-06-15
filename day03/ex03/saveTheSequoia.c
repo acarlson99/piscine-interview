@@ -22,6 +22,8 @@ void saveTheSequoia(struct s_node **root) {
 	if (!*root)
 		return ;
 	int swp = 0;
+	saveTheSequoia(&(*root)->left);
+	saveTheSequoia(&(*root)->right);
 	if ((*root)->left && (*root)->left->value > (*root)->value) {
 		swap(&(*root), &(*root)->left);
 		swp = 1;
@@ -30,8 +32,6 @@ void saveTheSequoia(struct s_node **root) {
 		swap(&(*root), &(*root)->right);
 		swp = 1;
 	}
-	saveTheSequoia(&(*root)->left);
-	saveTheSequoia(&(*root)->right);
 	if (swp)
 		saveTheSequoia(root);
 }

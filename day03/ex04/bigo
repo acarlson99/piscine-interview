@@ -1,0 +1,2 @@
+O(n) time - has to travel to end of tree to insert element
+O(n) space - enqueues everything to go to end
