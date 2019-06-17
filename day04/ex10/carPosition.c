@@ -6,6 +6,26 @@ int inc(int n) {
 	return (n | 1);
 }
 
+int rec(unsigned parkingRow) {
+	if (parkingRow)
+		return (inc(rec(parkingRow >> 1)));
+	return (0);
+}
+
+int powOf2(unsigned bits) {
+	if (bits) {
+		if (bits >> 1) {
+			if (bits & 1)
+				return (0);
+			return (powOf2(bits >> 1));
+		}
+		return (1);
+	}
+	return (0);
+}
+
 int carPosition(unsigned parkingRow) {
-	
+	if (powOf2(parkingRow))
+		return (rec(parkingRow));
+	return (-1);
 }
