@@ -26,9 +26,9 @@ int main(int ac, char **av)
 	char *res;
 
 	if (strcmp(av[2], "<<") == 0)
-		res = leftShift(strdup(bin), k);
+		res = leftShift(bin, k);
 	else
-		res = rightShift(strdup(bin), k);
+		res = rightShift(bin, k);
 	printf("%s (%d)\n", res, toInt(res));
 
 	return (0);
