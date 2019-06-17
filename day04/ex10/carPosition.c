@@ -7,7 +7,7 @@ int inc(int n) {
 }
 
 int rec(unsigned parkingRow) {
-	if (parkingRow)
+	if (parkingRow >> 1)
 		return (inc(rec(parkingRow >> 1)));
 	return (0);
 }
