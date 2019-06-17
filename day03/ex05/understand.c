@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdlib.h>
 #include "header.h"
 
@@ -32,21 +33,33 @@ struct s_trie *createTrie(char **dictionary) {
 }
 
 char *understand_(char *word, int idx, struct s_node *node) {
-	if (!word[idx])
+	if (node->isWord && !word[idx])
 		return (word);
-	if (node->c == '\0' && node->child[(int)word[idx]])
+	else if (!word[idx])
+		return (NULL);
+	else if (word[idx] == '?') {
+		for (int i = 0; i < 256; ++i) {
+			if (node->child[i]) {
+				char *s = strdup(word);
+				printf("RE %s\n", word);
+				if (node->c)
+					s[idx++] = (int)i;
+				char *ret = understand_(s, idx, node->child[i]);
+				if (ret)
+					return (ret);
+			}
+		}
+		return (NULL);
+	}
+	else if (node->c == '\0' && node->child[(int)word[idx]])
 		return (understand_(word, idx, node->child[(int)word[idx]]));
 	else if (!node->child[(int)word[idx]])
 		return (NULL);
-	if (word[idx] == '?')
-		return (NULL);
-	if (node->child[(int)word[idx]]) {
-		word[idx] = node->c;
+	else if (node->child[(int)word[idx]])
 		return (understand_(word, idx+1, node->child[(int)word[idx]]));
-	}
 	return (NULL);
 }
 
 char *understand(char *word, struct s_trie *trie) {
-	return (understand_(word, 0, trie->node));
+	return (understand_(strdup(word), 0, trie->node));
 }
