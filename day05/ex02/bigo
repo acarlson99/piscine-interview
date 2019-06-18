@@ -1,0 +1,2 @@
+O(n) time - only calculates each best price for n once
+O(n) space - uses hashtbl the size of the array
