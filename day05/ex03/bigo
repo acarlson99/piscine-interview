@@ -1,0 +1,2 @@
+O(n) time - worst case recurses over all nodes
+O(n) space - worst case recurses over all nodes
