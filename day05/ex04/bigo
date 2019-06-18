@@ -1,0 +1,2 @@
+O(n!) time - generates n! strings to print
+O(n) space - uses buffer same size as the string
