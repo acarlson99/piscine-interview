@@ -19,6 +19,9 @@ int main(int ac, char **av)
 	--------------------*/
         printf("%d : %.2f\n", pizzaSize, optimizedBestPrice(pizzaSize, pricesCont->items));
 
+        pizzaSize = 99;
+        printf("%d : %.2f\n", pizzaSize, optimizedBestPrice(pizzaSize, pricesCont->items));
+
 	return (0);
 }
 
