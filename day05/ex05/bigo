@@ -1,0 +1,2 @@
+O(n!) time - generates and prints all strings
+O(n!) space - worst case stores all strings
