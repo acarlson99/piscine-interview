@@ -1,0 +1,2 @@
+O(n) time - worst case goes through whole int
+O(n) space - recurses through whole int

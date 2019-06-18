@@ -1,0 +1,2 @@
+O(n) time - worst case goes to end of int
+O(n) space - worst case recurses to end of int
