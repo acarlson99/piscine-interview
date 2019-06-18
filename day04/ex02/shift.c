@@ -33,5 +33,8 @@ char *leftShift(char *bin, int k) {
 }
 
 int toInt(char *bits) {
-	return (strtol(bits, NULL, 2));
+	int n = strtol(bits, NULL, 2);
+	if (n < 31)
+		return (n);
+	return (-(64 - n));
 }
