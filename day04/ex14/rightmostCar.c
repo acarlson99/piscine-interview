@@ -15,5 +15,5 @@ int rec(unsigned bits) {
 int rightmostCar(unsigned parkingRow) {
 	if (parkingRow)
 		return (rec(parkingRow));
-	return (-1);
+	return (~0);
 }

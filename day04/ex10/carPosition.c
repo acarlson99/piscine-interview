@@ -27,5 +27,5 @@ int powOf2(unsigned bits) {
 int carPosition(unsigned parkingRow) {
 	if (powOf2(parkingRow))
 		return (rec(parkingRow));
-	return (-1);
+	return (~0);
 }
