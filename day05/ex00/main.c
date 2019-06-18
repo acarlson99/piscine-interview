@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	// printPossibleSlices(pizzaSize);
+	printPossibleSlices(pizzaSize);
 
 	return (0);
 }
