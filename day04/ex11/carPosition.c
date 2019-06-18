@@ -1,16 +1,5 @@
+#include <math.h>
 #include "header.h"
-
-int inc(int n) {
-	if (n & 1)
-		return (inc(n >> 1) << 1);
-	return (n | 1);
-}
-
-int rec(unsigned parkingRow) {
-	if (parkingRow >> 1)
-		return (inc(rec(parkingRow >> 1)));
-	return (0);
-}
 
 int powOf2(unsigned bits) {
 	if (bits) {
@@ -26,6 +15,6 @@ int powOf2(unsigned bits) {
 
 int carPosition(unsigned parkingRow) {
 	if (powOf2(parkingRow))
-		return (rec(parkingRow));
+		return (log2(parkingRow));
 	return (-1);
 }
