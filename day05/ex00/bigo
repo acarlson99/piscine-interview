@@ -1,0 +1,2 @@
+O(n^2) time - iterates from 0 to n every recursive call
+O(n) space - uses array of max size n, recurses a max of n calls deep
