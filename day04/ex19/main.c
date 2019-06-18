@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//aloneCan(arr, n);
+	aloneCan(arr, n);
 
 	return (0);
 }
