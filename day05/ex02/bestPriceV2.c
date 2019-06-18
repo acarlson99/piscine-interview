@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 11:42:19 by acarlson          #+#    #+#             */
-/*   Updated: 2019/06/18 13:30:37 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/06/18 14:38:08 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ double	rec(int n, double *prices, double *hashtablelol, int fst) {
 
 	if (hashtablelol[n])
 		return (hashtablelol[n]);
-	
 	while (++i <= n) {
-		if (hashtablelol[n])
-			ret = hashtablelol[n];
-		else
-			ret = rec(n - i, prices, hashtablelol, 0);
+		ret = rec(n - i, prices, hashtablelol, 0);
 		max = max_(ret + prices[i], max);
 	}
 	hashtablelol[n] = max;
@@ -39,5 +35,5 @@ double	rec(int n, double *prices, double *hashtablelol, int fst) {
 }
 
 double	optimizedBestPrice(int pizzaSize, double *prices) {
-	return (rec(pizzaSize, prices, calloc(pizzaSize, sizeof(double)), 1));
+	return (rec(pizzaSize, prices, calloc(pizzaSize + 1, sizeof(double)), 1));
 }
