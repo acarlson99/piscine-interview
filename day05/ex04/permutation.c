@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 13:05:38 by acarlson          #+#    #+#             */
-/*   Updated: 2019/06/18 13:26:57 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/06/18 13:31:10 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include "header.h"
 
-void printBois(char *str, size_t len, size_t idx, char *buffer) {
+void	printBois(char *str, size_t len, size_t idx, char *buffer) {
 	size_t i = -1;
 
 	if (idx == len) {
@@ -35,7 +35,7 @@ void printBois(char *str, size_t len, size_t idx, char *buffer) {
 		free(buffer);
 }
 
-void printPermutations(char *str) {
+void	printPermutations(char *str) {
 	if (!str)
 		return ;
 	int len = strlen(str);
