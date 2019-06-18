@@ -12,6 +12,8 @@ void fillBoi(int *arr, int n, int len) {
 }
 
 int **pianoDecompress(struct s_bit *bit, int l) {
+	if (!bit || !bit->arr)
+		return (NULL);
 	int **arr = calloc(bit->n + 1, sizeof(int*));
 
 	for (int i = 0; i < bit->n; ++i) {
