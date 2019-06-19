@@ -1,0 +1,2 @@
+O(n^2) time - checks all spots for each possible spot
+O(1) space - always uses same space
