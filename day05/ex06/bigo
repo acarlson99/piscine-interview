@@ -1,0 +1,2 @@
+O(2^n) time - it gets a whole lot thiccer when you add more lads
+O(tm) space - t = tables and m = time.  Uses array to represent tables over time
