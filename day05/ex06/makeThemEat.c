@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 14:43:58 by acarlson          #+#    #+#             */
-/*   Updated: 2019/06/18 17:19:18 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/06/18 17:23:55 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 #define CONTIF(cond) if (cond) continue
 #define RETIF(cond, val) if (cond) return (val)
 
-int seekEnd(char *table, int totalTime) {
+int	seekEnd(char *table, int totalTime) {
 	for (int i = 0; ; ++i)
 		RETIF(!(i <= totalTime && table[i]), i);
 }
 
-int arrMod(struct s_people *person, char *table, int b, int totalTime) {
+int	arrMod(struct s_people *person, char *table, int b, int totalTime) {
 	int end = seekEnd(table, totalTime);
 
 	RETIF((end < 0 || end + person->time > totalTime), 0);
@@ -30,7 +30,7 @@ int arrMod(struct s_people *person, char *table, int b, int totalTime) {
 	return (1);
 }
 
-int butRllyTho(struct s_people **people, char **tables, int totalTime,
+int	butRllyTho(struct s_people **people, char **tables, int totalTime,
 				int fst) {
 	RETIF(!*people, 1);
 	for (int i = 0; people[i]; ++i) {
