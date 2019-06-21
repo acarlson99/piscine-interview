@@ -1,0 +1,2 @@
+O(n) time - has to traverse whole array once
+O(log n) space - halves size of array and recurses

@@ -1,0 +1,2 @@
+O(n) time - worst case traverses graph twice
+O(n) space - worst case enqueues and recurses for each node
