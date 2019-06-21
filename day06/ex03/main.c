@@ -21,7 +21,7 @@ int main(int ac, char **av)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	// printf("%d\n", minPersons(elements, minPercentage));
+	printf("%d\n", minPersons(elements, minPercentage));
 
 	return (0);
 }

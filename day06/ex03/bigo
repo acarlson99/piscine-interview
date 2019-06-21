@@ -1,0 +1,2 @@
+O(n) time - iterates from 0 to n where n is the number of people
+O(1) space - uses constant space
