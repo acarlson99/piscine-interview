@@ -1,0 +1,2 @@
+O(n) time - iterates over array once
+O(k) space - keeps array of size k
