@@ -1,0 +1,2 @@
+O(n^3) time - where n = number of iterations
+O(n) space - recurses for each round

@@ -1,0 +1,2 @@
+O(n) time - iterates through array once
+O(1) space - uses constant space
