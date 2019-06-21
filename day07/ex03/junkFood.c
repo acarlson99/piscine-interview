@@ -7,29 +7,10 @@ int isEmpty(struct s_queue *queue) {
 }
 
 struct s_node *findMe(struct s_graph *graph, char *youAreHere) {
-	struct s_queue *q = queueInit();
-	int i = 0;
-	struct s_node *node;
-
-	for (; graph->places[i]; ++i)
-		enqueue(q, graph->places[i]);
-	while (!isEmpty(q)) {
-		node = dequeue(q);
-		if (node->visited) {
-			node = NULL;
-			continue ;
-		}
-		node->visited = 1;
-		if (!strcmp(youAreHere, node->name))
-			break ;
-		for (i = 0; node->connectedPlaces[i]; ++i)
-			enqueue(q, node->connectedPlaces[i]);
-		node = NULL;
-	}
-	while (!isEmpty(q))
-		dequeue(q);
-	free(q);
-	return (node);
+	for (int i = 0; graph->places[i]; ++i)
+		if (!strcmp(graph->places[i]->name, youAreHere))
+			return (graph->places[i]);
+	return (NULL);
 }
 
 void findSellers(struct s_sellers *sellers, struct s_queue *q, int distance) {
