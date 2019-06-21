@@ -76,7 +76,18 @@ int max__(int a, int b) {
 	return (a > b ? a : b);
 }
 
+int newMax(struct s_deque *dq) {
+	int max = INT_MIN;
+
+	for (struct s_dequeNode *node = dq->first; node; node = node->next)
+		max = max__(max, node->value);
+	return (max);
+}
+
 struct s_max *maxSlidingWindow(int *arr, int n, int k) {
+	if (!arr)
+		return (NULL);
+
 	struct s_deque *dq;
 	struct s_max *info = malloc(sizeof(struct s_max));
 
@@ -90,6 +101,13 @@ struct s_max *maxSlidingWindow(int *arr, int n, int k) {
 		pushFront(dq, arr[i]);
 	}
 	info->max[info->length++] = max;
-	printf("%d\n", *info->max);
-	return (NULL);
+	for (; i < n; ++i) {
+		max = max__(arr[i], max);
+		pushFront(dq, arr[i]);
+		int removed = popBack(dq);
+		if (removed == max)
+			max = newMax(dq);
+		info->max[info->length++] = max;
+	}
+	return (info);
 }
