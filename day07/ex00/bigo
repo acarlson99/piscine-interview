@@ -1,0 +1,2 @@
+O(n log n) time - O(n log n) to build heap and O(n) to sort array
+O(1) space
